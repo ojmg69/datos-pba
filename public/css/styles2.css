@@ -1,0 +1,24 @@
+@import "./personalizar-adminlte.css";
+@import "./mapav8.css";
+@import "./tablav2.css";
+@import "./lista-concejalesv2.css";
+@import "./dialogo-carga.css";
+@import "./tablerov2.css";
+@import "./button.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.popover-body {
+  position: absolute;
+  min-width: 180px;
+  text-align: center;
+  background: rgba(192, 240, 242, 0.6);
+  border-radius: 1em/5em;
+}

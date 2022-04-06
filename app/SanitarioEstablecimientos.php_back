@@ -1,0 +1,100 @@
+<?php
+
+namespace App\Http\Livewire;
+
+use App\EstablecimientoSanitario;
+use App\CategoriaEstablecimiento;
+use App\Distrito;
+use App\Seccion;
+use Livewire\Component;
+
+class SanitarioEstablecimientos extends Component
+{
+    public $vista;
+    public $pines;
+    public $establecimiento;
+    public $referencias;
+
+    protected $listeners = [
+        'clickEnEstablecimiento',
+        'clickEnMunicipio',
+        'clickEnSeccion',
+        'clickEnTodosLosMunicipios' => 'restaurarMapa',
+        'clickEnTodasLasSecciones'  => 'restaurarMapa',
+        'clickEnRestaurar'          => 'restaurarMapa',
+        'selectorClickeado'
+    ];
+
+    public function mount() {
+        $this->pines = EstablecimientoSanitario::pinesAgrupadosPorColumnaConConsulta(
+            EstablecimientoSanitario::join('categorias_establecimientos', 'establecimientos_sanitarios.categorias_establecimientos_id', '=', 'categorias_establecimientos.id'),
+            "categorias_establecimientos_id",
+            true
+        );
+
+        $this->referencias = CategoriaEstablecimiento::referencias();
+    }
+
+    public function render()
+    {
+        return view('livewire.sanitario-establecimientos');
+    }
+
+    public function verTabla() {
+        $this->vista = null;
+        $this->emit('arbol-navegabilidad.rutaActualizada', ['Eje Sanitario', 'Establecimientos Sanitarios']);
+        $this->dispatchBrowserEvent('mapaListo');
+    }
+
+    public function clickEnEstablecimiento($id) {
+        $this->vista = 'detalle';
+        $this->establecimiento = EstablecimientoSanitario::find($id);
+        $nombreDistrito= $this->establecimiento->distrito->nombre;
+        $this->emit('arbol-navegabilidad.rutaActualizada', ['Eje Sanitario', 'Establecimientos Sanitarios', $nombreDistrito]);
+        $coords = [
+            'latitud'   =>  $this->establecimiento->latitud,
+            'longitud'  =>  $this->establecimiento->longitud,
+        ];
+    
+        $this->dispatchBrowserEvent(
+            'enfocarCoordenadas',
+            [ 'coords' => $coords, 'idMunicipio' => $this->establecimiento->distrito_id ]
+        );
+    }
+
+    public function clickEnMunicipio($id){
+        $this->emit('arbol-navegabilidad.rutaActualizada', ['Eje Sanitario', 'Establecimientos Sanitarios', Distrito::find($id)->nombre]);
+    }
+
+    public function clickEnSeccion($id){
+        $this->emit('arbol-navegabilidad.rutaActualizada', ['Eje Sanitario', 'Establecimientos Sanitarios', Seccion::find($id)->nombre]);
+    }
+
+    public function restaurarMapa(){
+        $this->emit('arbol-navegabilidad.rutaActualizada', ['Eje Sanitario', 'Establecimientos Sanitarios']);
+    }
+
+    public function selectorClickeado($idCategoriaEstablecimiento)
+    {
+        $pines;
+        if ($idCategoriaEstablecimiento == 'todos')
+        {
+            $pines = EstablecimientoSanitario::pinesAgrupadosPorColumnaConConsulta(
+                EstablecimientoSanitario::join('categorias_establecimientos', 'establecimientos_sanitarios.categorias_establecimientos_id', '=', 'categorias_establecimientos.id'),
+                "categorias_establecimientos_id",
+                true
+            );
+        } else
+        {
+            $pines = EstablecimientoSanitario::pinesAgrupadosPorColumnaConConsulta(
+                EstablecimientoSanitario::
+                    join('categorias_establecimientos', 'establecimientos_sanitarios.categorias_establecimientos_id', '=', 'categorias_establecimientos.id')
+                    ->where('categorias_establecimientos.id', '=', $idCategoriaEstablecimiento),
+                "categorias_establecimientos_id",
+                true
+            );
+        }
+
+        $this->dispatchBrowserEvent('pinesActualizados', $pines);
+    }
+}

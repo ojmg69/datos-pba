@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;700;800&display=swap');
+
+.contador-grande--container
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.contador-grande--valor
+{
+    font-size: 28pt;
+    font-weight: 800;
+}
+
+.contador-grande--nombre
+{
+    font-size: 12pt;
+    font-family: sans-serif;
+    max-width: 171px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.tablero-seccion--container
+{
+    display: flex;
+    flex-flow: column nowrap;
+    margin-bottom: 15px;
+    padding: 10px;
+    padding-top: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.tablero-contadores--contadores
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tablero-grafico-dona--container
+{
+    height: 280px;
+    align-items: center;
+}
+
+.tablero-grafico-dona--canvas-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+    width: 220px;
+}
+
+.tablero-grafico-dona--etiquetas
+{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    height: 100%;
+    margin-left: 20px;
+}
+
+.etiqueta-grafico--container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.etiqueta-grafico--color {
+    height: 10px;
+    width: 10px;
+}
+
+.etiqueta-grafico--texto {
+    text-transform: uppercase;
+    margin-left: 5px;
+    font-size: 10pt;
+}
+
+@media screen and (max-width: 1360px) {
+    .contador-grande--valor
+    {
+        font-size: 16pt;
+        font-weight: 600;
+    }
+    
+    .contador-grande--nombre
+    {
+        font-size: 10pt;
+        font-family: sans-serif;
+        max-width: 200px;
+        text-align: center;
+    }
+
+    .tablero-grafico-dona--container {
+        height: 180px;
+    }
+
+    .tablero-grafico-dona--canvas-container {
+        height: 140px;
+        width: 140px;
+    }
+
+    .etiqueta-grafico--color {
+        height: 10px;
+        width: 10px;
+    }
+
+    .etiqueta-grafico--texto {
+        margin-left: 5px;
+        font-size: 10pt;
+    }
+}
+
+@media screen and (min-width: 1361px) and (max-width: 1600px) {
+    .contador-grande--valor
+    {
+        font-size: 24pt;
+        font-weight: 800;
+    }
+    
+    .contador-grande--nombre
+    {
+        font-size: 12pt;
+        font-family: sans-serif;
+        max-width: 200px;
+        text-align: center;
+    }
+
+    .tablero-seccion--container {
+        font-size: 16pt;
+    }
+
+    .tablero-grafico-dona--container {
+        height: 280px;
+    }
+
+    .tablero-grafico-dona--canvas-container {
+        height: 220px;
+        width: 220px;
+    }
+
+    .etiqueta-grafico--color {
+        height: 14px;
+        width: 14px;
+    }
+
+    .etiqueta-grafico--texto {
+        margin-left: 10px;
+        font-size: 12pt;
+    }
+}
+
+@media screen and (min-width: 1601px) and (max-width: 1920px) {
+    .tablero-seccion--container {
+        font-size: 18pt;
+    }
+
+    .tablero-grafico-dona--container {
+        height: 380px;
+    }
+
+    .tablero-grafico-dona--canvas-container {
+        margin-top: 10px;
+        height: 300px;
+        width: 300px;
+    }
+
+    .etiqueta-grafico--color {
+        height: 18px;
+        width: 18px;
+    }
+
+    .etiqueta-grafico--texto {
+        margin-left: 15px;
+        font-size: 18pt;
+    }
+}
+
+@media screen and (min-width: 1921px) and (max-width: 2160px) {
+    .contador-grande--valor
+    {
+        font-size: 36pt;
+        font-weight: 800;
+    }
+    
+    .contador-grande--nombre
+    {
+        font-size: 18pt;
+        font-family: sans-serif;
+        max-width: 200px;
+        text-align: center;
+    }
+
+    .tablero-seccion--container {
+        font-size: 24pt;
+    }
+
+    .tablero-grafico-dona--container {
+        height: 600px;
+    }
+
+    .tablero-grafico-dona--canvas-container {
+        margin-top: 10px;
+        height: 500px;
+        width: 500px;
+    }
+
+    .etiqueta-grafico--color {
+        height: 24px;
+        width: 24px;
+    }
+
+    .etiqueta-grafico--texto {
+        margin-left: 20px;
+        font-size: 24pt;
+    }
+}
+
+@media screen and (min-width: 3000px) and (max-width: 3841px) {
+    .contador-grande--valor
+    {
+        font-size: 50pt;
+        font-weight: 900;
+    }
+    
+    .contador-grande--nombre
+    {
+        font-size: 17pt;
+        font-family: sans-serif;
+        max-width: 200px;
+        text-align: center;
+    }
+
+    .tablero-seccion--container {
+        font-size: 24pt;
+    }
+
+    .tablero-grafico-dona--container {
+        height: 600px;
+    }
+
+    .tablero-grafico-dona--canvas-container {
+        margin-top: 10px;
+        height: 500px;
+        width: 500px;
+    }
+
+    .etiqueta-grafico--color {
+        height: 24px;
+        width: 24px;
+    }
+
+    .etiqueta-grafico--texto {
+        margin-left: 20px;
+        font-size: 24pt;
+    }
+}

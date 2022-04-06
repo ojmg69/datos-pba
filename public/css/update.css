@@ -1,0 +1,191 @@
+
+
+/*modificaciones adicionales*/
+
+body{
+    background:white!important;
+}
+
+.referencias.mapa__referencias{
+    background: white;
+    color: #3E444D;
+}
+.card-body h6{
+    color:#3E444D!important;
+}
+.card-body{
+    background-color:white;
+    color:#3E444D!important;
+}
+.col-7.col-sm-7.col-md-7{
+     background-color:white!important;
+}
+/*tabla*/
+table{
+    background:white!important;
+    
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f4f5f7!important;
+   
+}
+tbody tr:nth-child(even){
+    background-color: transparent!important;
+}
+table thead{
+    background-color: white!important;
+}
+table tr td,
+table tr{
+    color:#999999!important;    
+}
+
+
+/**************************/
+
+.container-btn{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+    column-gap: 16px;
+    row-gap: 24px;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.container-btn a{
+    width: 224px;
+    height: 221px;
+    margin:0 auto;
+}
+/*botones*/
+.municipios{
+    background: url('../img/botones/normal/btn-municipios.svg');    
+}
+.municipios:hover{
+    background: url('../img/botones/hover/btn-municipios.svg');    
+}
+
+.institucional{
+    background: url('../img/botones/normal/btn-institucional.svg');
+}
+.institucional:hover{
+    background: url('../img/botones/hover/btn-institucional.svg');
+}
+
+.electoral{
+    background: url('../img/botones/normal/btn-electoral.svg');
+}
+.electoral:hover{
+    background: url('../img/botones/hover/btn-electoral.svg');
+}
+
+.economico{
+    background: url('../img/botones/normal/btn-economico.svg');
+}
+.economico:hover{
+    background: url('../img/botones/hover/btn-economico.svg');
+}
+
+.productivo{
+    background: url('../img/botones/normal/btn-productivo.svg');
+}
+.productivo:hover{
+    background: url('../img/botones/hover/btn-productivo.svg');
+}
+
+.vivienda{
+    background: url('../img/botones/normal/btn-vivienda.svg');
+}
+.vivienda:hover{
+    background: url('../img/botones/hover/btn-vivienda.svg');
+}
+
+.sanitario{
+    background: url('../img/botones/normal/btn-sanitario.svg');
+}
+.sanitario:hover{
+    background: url('../img/botones/hover/btn-sanitario.svg');
+}
+
+.educacion{
+    background: url('../img/botones/normal/btn-educacion.svg');
+}
+.educacion:hover{
+    background: url('../img/botones/hover/btn-educacion.svg');
+}
+
+.cultura{
+    background: url('../img/botones/normal/btn-cultura.svg');
+}
+.cultura:hover{
+    background: url('../img/botones/hover/btn-cultura.svg');
+}
+
+.genero{
+    background: url('../img/botones/normal/btn-genero_new.svg');
+}
+.genero:hover{
+    background: url('../img/botones/hover/btn-genero_new.svg');
+}
+
+.ambiente{
+    background: url('../img/botones/normal/btn-medio-ambiente.svg');
+}
+.ambiente:hover{
+    background: url('../img/botones/hover/btn-medio-ambiente.svg');
+}
+
+.geografia{
+    background: url('../img/botones/normal/btn-geografia.svg');
+}
+.geografia:hover{
+    background: url('../img/botones/hover/btn-geografia.svg');
+}
+
+.main-header{
+    background-color: white!important;
+}
+.menu-top{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;  
+          
+}
+.content-botones{
+    margin-top: 0;
+}
+.btn-home,
+.btn-home:hover{
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.logo-top{
+    width: 265px;
+    padding: 1px;
+}
+.user-menu{
+    display: flex;
+    align-items: center;
+}
+.user-menu a.nav-link.dropdown-toggle {
+    color: white!important;
+}
+.tablero-img{
+    margin: 20px 30px;
+}
+
+.main-sidebar,
+.main-sidebar.sidebar-dark-primary {
+    background: #BFBFBF;
+}
+.main-sidebar .nav-link,
+.nav-header   {
+    color: white!important;
+}
+.mapa__cuerpo{
+    background: white!important;
+}
+
+.menu-top{
+    background-color:#17A2B8;
+}

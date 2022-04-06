@@ -1,0 +1,29 @@
+.tabla__controles {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.tabla__paginador {
+    font-size: 14px;
+    margin-right: auto;
+}
+
+.tabla__paginador > nav > ul {
+    margin-bottom: 0;
+}
+
+.tabla__buscador {
+    margin-left: auto;
+}
+
+.tabla__input {
+    margin-right: 20px;
+    width: 188px;
+}
+
+.tabla__input--derecho {
+    margin-right: 0;
+}

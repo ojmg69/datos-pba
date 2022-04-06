@@ -1,0 +1,51 @@
+/* CSS de lista de tarjetas */
+
+.lista-tarjetas {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+    grid-auto-flow: row;
+    gap: 15px;
+}
+
+#visor_imagenes {
+  text-align: left;
+}
+
+.blanco-rojo {
+  color: #FFFFFF;
+  background-color: #7c7c7c70;
+}
+
+
+.lista-tarjetas--vacia {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.lista-tarjetas--mensaje {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.lista-tarjetas__bloques {
+    margin-left: auto;
+    width: 188px;
+}
+
+.tarjeta-concejal {
+    display: flex;
+    align-items: center;
+
+    max-width: 100%;
+    padding: 15px;
+    font-size: 8pt;
+}
+
+.tarjeta-concejal--texto-largo {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}

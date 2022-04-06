@@ -1,0 +1,153 @@
+/*variables*/
+/*:root {
+  --txt: 2rem;
+  --txt-small:1.5rem;
+}*/
+.btn-home, .btn-home:hover{
+    background-position:center;
+}
+@media screen and (min-width: 1441px)  {
+  /*.btn{
+      font-size:17px!important;
+  }
+  /*tablero graficos
+  .tablero-grafico-dona--container{
+      height:auto!important;
+  }
+  .tablero-grafico-dona--canvas-container{
+      height: initial!important;
+        width: initial!important;
+  }
+  .tablero-grafico-dona--canvas-container canvas{
+      height: 350px!important;
+    width: 350px!important;
+  }
+  .etiqueta-grafico--texto{
+      font-size:var(--txt-small)!important;
+  }
+  .etiqueta-grafico--color{
+      width:40px!important;
+      height:40px!important;
+  }
+  /*generales
+  body{
+      font-size: 18px;
+  }
+  h6, .h6{
+      font-size:1.8rem!important;
+  }
+  .ml-2, 
+  .mx-2,
+  h4{
+      font-size: var(--txt)!important;
+  }
+  .content-botones{
+      font-size: var(--txt)!important;
+  }
+  /*menu  
+  .menu-top{
+      height: 120px;
+      font-size: var(--txt)!important;
+      
+  }
+  .logo-top{
+      height: 100%;
+      width: auto;
+      padding: 5px;
+  }
+  .user-footer a{
+      font-size: var(--txt)!important;
+  }
+  /*menu lateral*/
+    /*focus desplegable 
+  .sidebar-mini.sidebar-collapse .main-sidebar:hover, .sidebar-mini.sidebar-collapse .main-sidebar.sidebar-focused{
+    width: 460px!important;
+  }
+  .sidebar-mini.sidebar-collapse .main-sidebar, .sidebar-mini.sidebar-collapse .main-sidebar::before{
+      width: 87px!important;
+  }
+  aside{
+      width: 450px;
+      font-size: var(--txt)!important;
+      
+  }
+  .brand-link .brand-image{
+      max-height: 56px!important;
+      height:56px!important;
+  }
+  aside .nav-header {
+      font-size: var(--txt)!important;
+  }
+  /*contenido general*/
+    /*home botones */
+  .content-botones .card-title{
+      font-size: var(--txt)!important;
+  }
+  /*.custom-select.custom-select-lg,
+  .form-control-sm {
+      height: auto!important;
+      font-size: var(--txt)!important;
+  }
+  /*home*/
+  #home-container-main{
+    max-width: 90vw;
+
+  }
+  .container-btn{
+   /* grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));*/
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .container-btn a{
+    /*width: 500px;
+    height: 450px;*/
+    max-width: 500px;
+    max-height: 450px;
+    width: 100%;
+    height: calc(70vh/3);
+  }
+  .tablero-img{
+      width: 500px;
+  }
+  
+  .tablero-text{
+      font-size: 30px;
+  }
+  /*container left and right
+  .container-main div div > .row{
+    display: grid;
+    grid-template-columns: 3fr 9fr;      
+    justify-content: center;    
+    height: 100vh;
+  }
+  .container-main div div > .row div
+  {
+      max-width: 100%;
+  }
+
+  /*formulario
+  .box-title{
+      font-size: var(--txt)!important;
+  }
+
+  /*mapa
+  .mapa--controles.mapa__controles{
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+  }
+  #idSecciones option{
+      width: 300px;
+      font-size: var(--txt)!important;
+  }
+    /*referencias
+    .circulo{
+        width: 30px!important;
+        height: 30px!important;
+    }
+    .referencia{
+        font-size: 1.5rem!important;
+        display: flex;
+        align-items: center;
+    }
+    }
+}

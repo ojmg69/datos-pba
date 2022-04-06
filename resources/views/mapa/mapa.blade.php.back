@@ -1,0 +1,45 @@
+<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5" style="background-color: #015875; color:#ffffff">
+    <div class="row">
+        <a href="#" class="list-group-item list-group-item-action text-white bg-info">Mapa Interactivo</a>
+    </div><hr>
+    <div id="listado" class="col-sm-12 col-md-7">
+
+        <div class="row backgroundContainer mt-4 mt-md-0">
+            <select name="featuresList" id="idSecciones" class="form-control w-100 select2-hidden-accessible"
+                onchange="obtenerDatosFeature()" tabindex="-1" aria-hidden="true">
+                <option value="-1">Todos</option>
+            </select>
+        </div>
+
+    </div>
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-sm-12 col-md-8">
+            <div class="row mt-4 mt-md-0">
+                <div class="col-md-12">
+                    <div id="map" class="map" tabindex="0"></div>
+                    <div id="top-popup" title="" class="rounded"></div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-info active">
+                    <input type="radio" onclick="selectLayer()" name="mapShowOption" id="showSecciones"
+                        autocomplete="off" value='1' checked> SECCIONES
+                </label>
+                <label class="btn btn-info">
+                    <input type="radio" onclick="selectLayer()" name="mapShowOption" id="showDistritos"
+                        autocomplete="off" value='2'> DISTRITOS
+                </label>
+                <label class="btn btn-info ml-2">
+                    <input type="radio" onclick="selectLayer()" name="mapShowOption" id="initialShow" autocomplete="off"
+                        value='3'> RESTAURAR
+                </label>
+            </div>
+        </div>
+        {{-- <button onclick="deleteIconFeatures()">Clic para eliminar los iconos</button>
+        <button onclick="loadIconFeaturesExamples()">Clic para volver a cargar los iconos</button> --}}
+
+
+    </div>
+</div>

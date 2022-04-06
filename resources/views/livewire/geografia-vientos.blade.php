@@ -1,0 +1,92 @@
+<div class="box">
+    @switch($vista)
+        @case('detalle')
+        {{-- <div class="box-header">
+                <h3 class="box-title">{{ $asentamiento->nombre }}</h3>
+                <span>{{ $asentamiento->tipo_asentamientos->nombre }}</span>
+            </div>
+            <hr>
+            <div class="box-body row">
+                <div class="col-7">
+
+                </div>
+                <div class="col-5 justifiy-content-center">
+
+                </div>
+                <button class="btn btn-info" wire:click="verTabla">Volver al listado completo</button>
+            </div>
+            @break --}}
+        @break
+        @default
+        <div class="box-header">
+            <h3 class="box-title">Geografía - Vientos</h3>
+        </div>
+        <div class="box-body">
+            @livewire('tabla-generica', [
+            'tabla' => 'distrito_viento',
+
+            'joins' =>
+            [
+            'distritos' => ['distrito_id', ['nombre']],
+            'vientos' => ['viento_id', ['nombre']],
+            ],
+
+            'columnas' =>
+            [
+            'distritos.nombre' => 'Municipio',
+            'vientos.nombre' => 'Viento'
+
+            ],
+
+            'escucharMapa' => true,
+
+            'buscador' =>
+            [
+            'columna' => 'distritos.nombre',
+            'mensaje' => 'Buscar por nombre'
+            ],
+
+
+
+            'selector' =>
+            [
+                'porTabla' => [
+                    'tabla' => 'vientos',
+                    'opciones' => 'nombre',
+                    'valores' => 'id',
+                ],    
+                'filtrarPor' => 'viento_id',
+                'textoDefecto' => 'Todos los vientos',
+
+            ]
+            ])
+        </div>
+    @endswitch
+
+    @section('js')
+        <script>
+           window.addEventListener('mapaListo', evento => {
+                mapa.quitarEstilos()
+                mapa.quitarReferencias()
+                mapa.quitarPines()
+                // mapa.municipios()
+                mapa.municipiosSiNoHayFoco()
+
+                const estilosMunicipios = JSON.parse('{!! json_encode($this->estilosMunicipios) !!}')
+                mapa.pintarMunicipios(estilosMunicipios);
+
+                const referencias = JSON.parse('{!! json_encode($referencias) !!}');
+                console.log(referencias.data)
+                mapa.agregarReferencias(referencias, 'municipios', 'Clasificación por velocidad' );
+
+            });
+
+            window.addEventListener('estilosActualizados', evento => {
+                const estilos = evento.detail
+
+                mapa.pintarMunicipios(estilos);
+            })
+
+        </script>
+    @stop
+</div>

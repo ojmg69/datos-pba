@@ -1,0 +1,248 @@
+.map:active,
+.map:focus {
+    outline: 0;
+    border: none;
+    outline-style: none;
+    -moz-outline-style: none;
+}
+
+.mapa__cuerpo {
+    display: flex;
+    flex-flow: column nowrap;
+
+    background: #015875;
+    color: white;
+    height: 100%;
+}
+
+.mapa__titulo {
+    text-align: center;
+    padding: 10px;
+    font-size: 1.1rem;
+    min-height: 50px;
+}
+
+.mapa__select {
+    max-width: 50%;
+    align-self: center;
+}
+
+.mapa__controles {
+    align-self: center;
+    margin-top: 10px;
+}
+
+.mapa__dialogo-carga {
+    align-self: center;
+    justify-self: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 320px;
+    height: 468px;
+}
+
+.mapa__mapa-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mapa__referencias {
+    background-color: rgb(33, 37, 41, 0.5);
+
+    display: flex;
+    gap: 5px;
+    flex-flow: column nowrap;
+    align-self: flex-end;
+
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #44d0ff;
+    border-radius: 5px;
+
+    position: absolute;
+    right: 0px;
+
+    width: 350px;
+    max-height: 220px;
+
+    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.mapa__referencias__titulo {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.mapa__referencias__items {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-flow: row wrap;
+}
+
+.circulo {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+@media screen and (max-width: 1360px) {
+    .map {
+        width: 344px;
+        height: 435px;
+        /* factor 0.79 */
+    }
+
+    .mapa__referencias{
+        margin: 7px;
+        padding: 7px;
+        border: 1px solid #44d0ff;
+        border-radius: 3px;
+        width: 330px;
+        max-height: 130px;
+    }
+    .mapa__referencias__titulo{
+        font-size: 20px;
+    }
+    .mapa__referencias__items {
+        gap: 10px;
+    }
+    .circulo{
+        height: 12px;
+        width: 12px;
+        margin-right: 2px;
+    }
+}
+
+@media screen and (min-width: 1361px) and (max-width: 1600px) {
+    .map, .mapa__dialogo-carga {
+        width: 500px;
+        height: 600px;
+        /* factor 0.83 */
+    }
+
+    .mapa__referencias{
+        margin: 7px;
+        padding: 7px;
+        border: 1px solid #44d0ff;
+        border-radius: 3px;
+        width: 360px;
+        max-height: 160px;
+    }
+    .mapa__referencias__titulo{
+        font-size: 20px;
+    }
+    .mapa__referencias__items {
+        gap: 10px;
+    }
+    .circulo{
+        height: 12px;
+        width: 12px;
+        margin-right: 3px;
+    }
+    .referencia{
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 1601px) and (max-width: 1920px) {
+    .map, .mapa__dialogo-carga {
+        width: 650px;
+        height: 770px;
+        /* factor 0.84 */
+    }
+
+    .mapa__referencias{
+        margin: 7px;
+        padding: 7px;
+        border: 1px solid #44d0ff;
+        border-radius: 3px;
+        width: 400px;
+        max-height: 220px;
+    }
+    .mapa__referencias__titulo{
+        font-size: 20px;
+    }
+    .mapa__referencias__items {
+        gap: 10px;
+    }
+    .circulo{
+        height: 15px;
+        width: 15px;
+        margin-right: 3px;
+    }
+    .referencia{
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1921px) and (max-width: 2160px) {
+    .map, .mapa__dialogo-carga {
+        width: 757px;
+        height: 1130px;
+        /* factor 0.67 */        
+    }
+
+    .mapa__referencias{
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #44d0ff;
+        border-radius: 5px;
+        width: 500px;
+        max-height: 280px;
+    }
+    .mapa__referencias__titulo{
+        font-size: 25px;
+    }
+    .mapa__referencias__items {
+        gap: 18px;
+    }
+    .circulo{
+        height: 17px;
+        width: 17px;
+        margin-right: 3px;
+    }
+    .referencia{
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 3000px) and (max-width: 3841px) {
+    .map, .mapa__dialogo-carga {
+       width: 757px;
+        height: 2130px;
+        /* factor 0.67 */        
+    }
+
+    .mapa__referencias{
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #44d0ff;
+        border-radius: 5px;
+        width: 500px;
+        max-height: 280px;
+    }
+    .mapa__referencias__titulo{
+        font-size: 25px;
+    }
+    .mapa__referencias__items {
+        gap: 18px;
+    }
+    .circulo{
+        height: 17px;
+        width: 17px;
+        margin-right: 3px;
+    }
+    .referencia{
+        font-size: 15px;
+    }
+}
