@@ -85,19 +85,19 @@ class SanitarioEstablecimientos extends Component
     {
         $this->idMunicipio = $id;
         $this->idSeccion = null;
-        $this->cargarDatosTablero(['idMunicipio' => $id]);
+        $this->cargarDatosTablero(['idMunicipio' => $this->idMunicipio]);
         $this->actualizarTablero();
-        $this->dispatchBrowserEvent('clickEnLupita', intval($id));
-        $this->emit('arbol-navegabilidad.rutaActualizada', ['Eje Sanitario', 'Establecimientos Sanitarios', Distrito::find($id)->nombre]);
+        $this->dispatchBrowserEvent('clickEnLupita', intval($this->idMunicipio));
+        $this->emit('arbol-navegabilidad.rutaActualizada', ['Eje Sanitario', 'Establecimientos Sanitarios', Distrito::find($this->idMunicipio)->nombre]);
     }
 
     public function clickEnSeccion($id)
-    {
+    {        
         $this->idSeccion = $id;
         $this->idMunicipio = null;
-        $this->cargarDatosTablero(['idSeccion' => $id]);
+        $this->cargarDatosTablero(['idSeccion' => $this->idSeccion]);
         $this->actualizarTablero();
-        $this->emit('arbol-navegabilidad.rutaActualizada', ['Eje Sanitario', 'Establecimientos Sanitarios', Seccion::find($id)->nombre]);
+        $this->emit('arbol-navegabilidad.rutaActualizada', ['Eje Sanitario', 'Establecimientos Sanitarios', Seccion::find($this->idSeccion)->nombre]);
     }
 
     public function restaurarMapa()

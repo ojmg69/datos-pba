@@ -12679,7 +12679,12 @@
                     .map(function (opcion) { return ({ nombre: aTitulo(opcion.nombre), valor: opcion.valor }); })
                     .sort(function (a, b) { return a.nombre.localeCompare(b.nombre); });
             }
-            this.select.onchange = function () { return _this.onChange(Number(select.value)); };
+            this.select.onchange = function () { 
+                if (_this.estado.capa === 'secciones') {
+                    livewireEmit('clickEnSeccion',Number(select.value))
+                }
+                return _this.onChange(Number(select.value)); 
+            };
             this.mapa.alClickearMunicipio(function (id) { return _this.alClickearMunicipio(id); });
             this.mapa.alClickearSeccion(function (id) { return _this.alClickearSeccion(id); });
             this.mapa.alCambiarCapa(function (capa) { return _this.alCambiarCapa(capa); });
@@ -12729,14 +12734,15 @@
                     f(valor);
                 }
             }
+
         };
         Selector.prototype.actualizarMapa = function (estadoPrevio, estadoActual) {
             if (estadoPrevio.capa === 'secciones' && estadoActual.capa === 'municipios') {
-                this.mapa.enfocarMunicipiosDeSeccion(estadoActual.seccion);
+                this.mapa.enfocarMunicipiosDeSeccion(estadoActual.seccion);                
                 return;
             }
             if (estadoPrevio.capa === 'secciones' && estadoActual.capa === 'municipios' && estadoActual.valor === MUNICIPIOS_DE_SECCION_ACTUAL) {
-                this.mapa.enfocarMunicipiosDeSeccion(estadoActual.valor);
+                this.mapa.enfocarMunicipiosDeSeccion(estadoActual.valor);                
                 return;
             }
             if (estadoActual.capa === 'municipios') {
@@ -43807,11 +43813,15 @@
                             });
                             this._interfaz = new Interfaz(this);
                             this._interfaz.select.alSeleccionarMunicipio(function (id) {
+                                console.log('inte',_this._interfaz);
                                 for (var _i = 0, _a = _this.callbackAlClickearMunicipio; _i < _a.length; _i++) {
                                     var f = _a[_i];
                                     f(id);
                                 }
+
+                             
                             });
+
                             this._interfaz.select.alSeleccionarSeccion(function (id) {
                                 for (var _i = 0, _a = _this.callbackAlClickearSeccion; _i < _a.length; _i++) {
                                     var f = _a[_i];
