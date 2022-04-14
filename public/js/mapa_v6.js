@@ -43563,9 +43563,9 @@
         Mapa.prototype.alHacerClick = function (evento) {
             var _this = this;
             if (this.estado.clickHabilitado) {
-                this.map.forEachFeatureAtPixel(evento.pixel, function (seccionOdistrito) {
+                this.map.forEachFeatureAtPixel(evento.pixel, function (seccionOdistrito) {              
                     // If agregado para ignorar clicks sobre el entorno -- QUITAR luego de aplicar mascara
-                    if (seccionOdistrito.get('id') != 99999) {
+                    if (seccionOdistrito.get('id') != 99999 && _this.estado.clickHabilitado) {
                         // Detectar si se hizo click en una seccion o en un distrito
                         if (seccionOdistrito.get('nombreSeccion')) {
                             _this.alClickearSeccion(seccionOdistrito);
@@ -43574,8 +43574,10 @@
                             _this.alClickearDistrito(seccionOdistrito);
                         }
                     }
+                    _this.estado.clickHabilitado=false;
                 });
-            }
+                _this.estado.clickHabilitado=true;
+            }            
         };
         Mapa.prototype.alClickearSeccion = function (seccion) {
             var id = Number(seccion.get('id'));
